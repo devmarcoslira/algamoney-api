@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-@ControllerAdvice
+@ControllerAdvice //possibilita compartilhar a classe com todos os controles da aplicação
 public class AlgamoneyExceptionHandler extends ResponseEntityExceptionHandler{
 	
 	@Autowired
@@ -34,6 +34,8 @@ public class AlgamoneyExceptionHandler extends ResponseEntityExceptionHandler{
 		List<Erro> erros = Arrays.asList(new Erro(mensagemUsuario, mensagemDesenvolvedor));
 		return handleExceptionInternal(ex, erros, headers, HttpStatus.BAD_REQUEST, request);
 	}
+	
+	
 	
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
