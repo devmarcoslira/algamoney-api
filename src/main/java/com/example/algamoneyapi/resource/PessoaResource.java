@@ -2,6 +2,8 @@ package com.example.algamoneyapi.resource;
 
 import java.util.List;
 
+
+
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
@@ -66,7 +68,7 @@ public class PessoaResource {
 	}
 	
 	@DeleteMapping("/{codigo}")
-	@ResponseStatus(HttpStatus.NO_CONTENT) //return error 204 (significando que foi feito o processo, mas não tem nada para retornar
+	@ResponseStatus(HttpStatus.NO_CONTENT) //return error 204 (significando que foi feito o processo, mas não tem nada para retornar)
 	public void remover(@PathVariable Long codigo) {
 		pessoaRepository.delete(codigo);
 	}
